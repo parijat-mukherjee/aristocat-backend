@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const userEmail = process.env.SENDER_EMAIL;
 const password = process.env.SENDER_PASS;
@@ -52,5 +52,5 @@ app.post("/submit-form", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+  console.log(`Server is listening at PORT:${port}`);
 });
